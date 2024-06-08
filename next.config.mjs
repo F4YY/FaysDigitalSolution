@@ -4,3 +4,4 @@ import BuilderDevTools from "@builder.io/dev-tools/next";
 const nextConfig = BuilderDevTools()({});
 
 export default nextConfig;
+
