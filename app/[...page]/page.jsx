@@ -29,7 +29,7 @@ builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 export default async function Page(props) {
   const builderModelName = "page";
 
-  let urlPath = "https://faysdigitalsolution.netlify.app"; // Default URL path for the homepage
+  let urlPath = "https://faysdigitalsolution.netlify.app"; // Default URL path for the homepage i want this
 
   if (props?.params?.page) {
     urlPath += "/" + props.params.page.join("/"); // Construct the URL path for other pages
