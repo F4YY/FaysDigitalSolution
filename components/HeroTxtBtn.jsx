@@ -21,6 +21,12 @@ const HeroContainer = styled.div`
   flex-direction: column;
   position: relative;
   width: 500px;
+  @media (max-width: 991px) {
+    width: 400px;
+  }
+  @media (max-width: 475px) {
+    width: 300px;
+  }
 `;
 
 const HeroText = styled.div`
@@ -36,6 +42,18 @@ const HeroText = styled.div`
       color: #f7971a;
     }
   }
+  @media (max-width: 991px) {
+    font: 30px "Poppins", sans-serif;
+    margin-top: 60px;
+    padding: 20px;
+    border-radius: 0 15px 0 0;
+  }
+  @media (max-width: 475px) {
+    font: 25px "Poppins", sans-serif;
+    margin-top: 160px;
+    padding: 10px;
+    border-radius: 0 10px 0 0;
+  }
 `;
 
 const StartButton = styled.button`
@@ -50,6 +68,10 @@ const StartButton = styled.button`
   cursor: pointer;
   font-size: 25px;
   padding: 15px 25px;
+  @media (max-width: 991px) {
+    font-size: 20px;
+    padding: 10px 15px;
+  }
 `;
 
 export default HeroTxtBtn;
