@@ -21,14 +21,14 @@ const HeroContainer = styled.div`
   flex-direction: column;
   position: relative;
   width: 500px;
-  border-radius: 0 20% 20% 0;
 `;
 
 const HeroText = styled.div`
   position: relative;
-  margin-top: 200px;
+  margin-top: 120px;
   background-color: rgba(74, 74, 74, 0.65);
   padding: 40px;
+  border-radius: 0 20px 0 0;
   font: 45px "Poppins", sans-serif;
   p {
     color: #fff;
@@ -45,7 +45,7 @@ const StartButton = styled.button`
   position: relative;
   background-color: rgba(74, 144, 226, 1);
   color: #fff;
-  border-radius: 4px;
+  border-radius: 0 0 20px 0;
   text-align: center;
   cursor: pointer;
   font-size: 25px;
