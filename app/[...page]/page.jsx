@@ -18,36 +18,28 @@ export default async function Page(props) {
     // Convert the result to a promise
     .toPromise();
 
+  const headerContent = await builder
+  .get(builderModelName, {
+    userAttributes: {
+      urlPath: "/header",
+    },
+  })
+  .toPromise();
+  const footerContent = await builder
+    .get(builderModelName, {
+      userAttributes: {
+        urlPath: "/footer",
+      },
+    })
+  .toPromise();
+
   return (
     <>
-      {/* Render the Builder page */}
+      <RenderBuilderContent content={headerContent} model={builderModelName} />
       <RenderBuilderContent content={content} model={builderModelName} />
+      <RenderBuilderContent content={footerContent} model={builderModelName} />
     </>
   );
 }
 
-// export default async function Page(props) {
-//   const builderModelName = "page";
-
-//   let urlPath = "http://localhost:3000"; // Set the URL path to the default development URL
-
-//   if (props?.params?.page) {
-//     urlPath += "/" + props.params.page.join("/"); // Construct the URL path for other pages
-//   }
-
-//   const content = await builder
-//     .get(builderModelName, {
-//       userAttributes: {
-//         urlPath, // Use the constructed URL path to fetch the content
-//       },
-//     })
-//     .toPromise();
-
-//   return (
-//     <>
-//       {/* Render the Builder page */}
-//       <RenderBuilderContent content={content} model={builderModelName} />
-//     </>
-//   );
-// }
 
