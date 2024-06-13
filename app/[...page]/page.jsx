@@ -1,7 +1,7 @@
 // 'use client';
 import { builder } from "@builder.io/sdk";
 import { RenderBuilderContent } from "../../components/builder";
-import layout from "../../app/layout.jsx";
+import layout from "../layout";
 
 // Builder Public API Key set in .env file
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);

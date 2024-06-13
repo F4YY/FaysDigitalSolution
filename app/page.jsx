@@ -2,7 +2,7 @@
 import React from "react";
 import { builder } from "@builder.io/sdk";
 import { RenderBuilderContent } from "../components/builder";
-import layout from "../app/layout.jsx";
+import layout from "../app/layout";
 
 // Replace with your Public API Key
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);

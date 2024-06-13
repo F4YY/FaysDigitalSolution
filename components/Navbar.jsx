@@ -22,7 +22,7 @@ import {
   UserName,
   UserPicture,
 } from "./styled_navbar";
-import LogoFDS from '../public/LogoFDS&desc(new)rounded-white.png'
+import LogoFDS from '../public/LogoFDS&desc(new)rounded-white.png';
 
 const NavBar = ({currentPage, setCurrentPage}) => {
   const NavBarRef = useRef(null);
