@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDe3SJZtyyrG2SZjYhm8T6zsHm8Mp2cJqs",
-  authDomain: "fay-s-dalgona.firebaseapp.com",
-  projectId: "fay-s-dalgona",
-  storageBucket: "fay-s-dalgona.appspot.com",
-  messagingSenderId: "229893724458",
-  appId: "1:229893724458:web:58ac071c8faf8a57b5a653",
-  measurementId: "G-X8RXXL0DWF"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
