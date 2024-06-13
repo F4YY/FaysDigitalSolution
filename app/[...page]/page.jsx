@@ -1,5 +1,7 @@
+// 'use client';
 import { builder } from "@builder.io/sdk";
 import { RenderBuilderContent } from "../../components/builder";
+import layout from "../../app/layout.jsx";
 
 // Builder Public API Key set in .env file
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
@@ -18,13 +20,13 @@ export default async function Page(props) {
     // Convert the result to a promise
     .toPromise();
 
-  const headerContent = await builder
-  .get(builderModelName, {
-    userAttributes: {
-      urlPath: "/header",
-    },
-  })
-  .toPromise();
+  // const headerContent = await builder
+  // .get(builderModelName, {
+  //   userAttributes: {
+  //     urlPath: "/header",
+  //   },
+  // })
+  // .toPromise();
   const footerContent = await builder
     .get(builderModelName, {
       userAttributes: {
@@ -34,11 +36,12 @@ export default async function Page(props) {
   .toPromise();
 
   return (
-    <>
-      <RenderBuilderContent content={headerContent} model={builderModelName} />
+    <layout>
+      {/* <NavBar/> */}
+      {/* <RenderBuilderContent content={headerContent} model={builderModelName} /> */}
       <RenderBuilderContent content={content} model={builderModelName} />
       <RenderBuilderContent content={footerContent} model={builderModelName} />
-    </>
+    </layout>
   );
 }
 

@@ -31,25 +31,25 @@ const HeroContainer = styled.div`
 
 const HeroText = styled.div`
   position: relative;
-  margin-top: 120px;
+  margin-top: 180px;
   background-color: rgba(74, 74, 74, 0.65);
   padding: 40px;
   border-radius: 0 20px 0 0;
-  font: 45px "Poppins", sans-serif;
+  font: 38px "Poppins", sans-serif;
   p {
     color: #fff;
     span {
-      color: #f7971a;
+      color: #f7e11d;
     }
   }
   @media (max-width: 991px) {
-    font: 30px "Poppins", sans-serif;
-    margin-top: 60px;
+    font: 28px "Poppins", sans-serif;
+    margin-top: 100px;
     padding: 20px;
     border-radius: 0 15px 0 0;
   }
   @media (max-width: 475px) {
-    font: 25px "Poppins", sans-serif;
+    font: 23px "Poppins", sans-serif;
     margin-top: 160px;
     padding: 10px;
     border-radius: 0 10px 0 0;

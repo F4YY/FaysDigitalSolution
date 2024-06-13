@@ -1,14 +1,13 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+// "use client";
+import React from "react";
 import { builder } from "@builder.io/sdk";
-import Head from "next/head";
 import { RenderBuilderContent } from "../components/builder";
+import layout from "../app/layout.jsx";
 
 // Replace with your Public API Key
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 
-export default async function Page() {
+export default async function Homepage() {
   const builderModelName = "page";
   // const content = await builder
   //   .get(builderModelName, {
@@ -24,13 +23,13 @@ export default async function Page() {
       },
     })
     .toPromise();
-  const headerContent = await builder
-    .get(builderModelName, {
-      userAttributes: {
-        urlPath: "/header",
-      },
-    })
-    .toPromise();
+  // const headerContent = await builder
+  //   .get(builderModelName, {
+  //     userAttributes: {
+  //       urlPath: "/header",
+  //     },
+  //   })
+  //   .toPromise();
   const footerContent = await builder
     .get(builderModelName, {
       userAttributes: {
@@ -39,11 +38,11 @@ export default async function Page() {
     })
     .toPromise();
   return (
-    <>
-      <RenderBuilderContent content={headerContent} model={builderModelName} />
+    <layout>
+      {/* <RenderBuilderContent content={headerContent} model={builderModelName} /> */}
       <RenderBuilderContent content={homepageContent} model={builderModelName} />
       <RenderBuilderContent content={footerContent} model={builderModelName} />
-    </>
+    </layout>
   );
 }
 
