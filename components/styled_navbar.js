@@ -51,7 +51,7 @@ export const UserPicture = styled(Image)`
   aspect-ratio: 1/1;
   border-radius: 50%;
   @media screen and (max-width: 640px) {
-    margin-right: .5rem;
+    margin-right: 1.2rem;
   }
 `;
 export const StyledUl = styled.ul`
