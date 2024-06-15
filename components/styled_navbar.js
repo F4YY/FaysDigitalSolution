@@ -41,6 +41,9 @@ export const UserName = styled.h4`
   font-size: .8rem;
   font-weight: var(--regular);
   text-align: center;
+  @media screen and (max-width: 640px) {
+    font-size: .5rem;
+  }
 `;
 export const UserPicture = styled(Image)`
   display: flex;

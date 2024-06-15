@@ -29,8 +29,8 @@ const HeroContainer = styled.div`
   @media (max-width: 991px) {
     width: 400px;
   }
-  @media (max-width: 475px) {
-    width: 300px;
+  @media (max-width: 640px) {
+    width: 240px;
   }
 `;
 
@@ -53,10 +53,10 @@ const HeroText = styled.div`
     padding: 20px;
     border-radius: 0 15px 0 0;
   }
-  @media (max-width: 475px) {
+  @media (max-width: 640px) {
     font: 23px "Poppins", sans-serif;
     margin-top: 160px;
-    padding: 10px;
+    padding: 20px;
     border-radius: 0 10px 0 0;
   }
 `;
