@@ -150,7 +150,7 @@ const NavBar = ({currentPage, setCurrentPage}) => {
               </LogoutButton>
               <HStack>
                 <UserName>
-                  <b>{user.user_metadata.full_name}</b>
+                  {user.user_metadata.full_name}
                 </UserName>
                 {user.user_metadata.avatar_url ? (
                   <UserPicture
