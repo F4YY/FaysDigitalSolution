@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 function HeroTxtBtn() {
   return (
@@ -9,7 +10,11 @@ function HeroTxtBtn() {
           <HeroText>
             <p>Custom Website solutions to help your business <span>succeed.</span></p>
           </HeroText>
-          <StartButton href="/about">Get Started!</StartButton>
+          <StartButton>
+            <Link href="/about">
+              Get Started!
+            </Link>
+          </StartButton>
         </HeroContainer>
       </section>
     </main>
