@@ -61,6 +61,10 @@ export const StyledUl = styled.ul`
   @media (max-width: 991px) {
     justify-content: center;
   }
+  @media (max-width: 640px) {
+    width: 100%;
+    gap: .5rem;
+  }
 `;
 export const StyledUlmobile = styled(StyledUl)`
   display: flex;
