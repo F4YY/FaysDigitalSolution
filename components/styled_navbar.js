@@ -50,9 +50,6 @@ export const UserPicture = styled(Image)`
   object-position: center;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  @media screen and (max-width: 640px) {
-    margin-right: 1.2rem;
-  }
 `;
 export const StyledUl = styled.ul`
   display: flex;
