@@ -33,7 +33,7 @@ export const StyledImage = styled(Image)`
     height: auto;
   }
   @media (max-width: 640px) {
-    width: 180px;
+    width: 190px;
     height: auto;
   }
 `
@@ -54,7 +54,6 @@ export const UserPicture = styled(Image)`
 export const StyledUl = styled.ul`
   display: flex;
   flex-direction: row;
-  width:100%;
   list-style: none;
   justify-content: right;
   align-items: center;

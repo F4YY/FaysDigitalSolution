@@ -39,24 +39,23 @@ const NavBar = ({currentPage, setCurrentPage}) => {
 
   useEffect(() => {
     let prevScrollPos = window.scrollY;
-  const handleScroll = () => {
-    const currentScrollPos = window.scrollY;
-    const NavBarElement = NavBarRef.current;
-    if (!NavBarElement) {
-      return;
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      const NavBarElement = NavBarRef.current;
+      if (!NavBarElement) {
+        return;
+        }
+      if (prevScrollPos > currentScrollPos) {
+        NavBarElement.style.transform = "translateY(0)";
+        } else {
+        NavBarElement.style.transform = "translateY(-200px)";
+        }
+        prevScrollPos = currentScrollPos;
       }
-    if (prevScrollPos > currentScrollPos) {
-      NavBarElement.style.transform = "translateY(0)";
-      } else {
-      NavBarElement.style.transform = "translateY(-200px)";
-      }
-      prevScrollPos = currentScrollPos;
+    window.addEventListener('scroll', handleScroll)
+    return() => {
+        window.removeEventListener('scroll', handleScroll)
     }
-      window.addEventListener('scroll', handleScroll)
-
-      return() => {
-          window.removeEventListener('scroll', handleScroll)
-      }
   },[]);
 
   const [toggleMenu, setToggleMenu] = React.useState(false);
@@ -160,7 +159,7 @@ const NavBar = ({currentPage, setCurrentPage}) => {
                     height={50}
                   />) : (
                   <UserPicture
-                    src={`/images/avatar.jpg`}
+                    src={`/public/avatar.jpg`}
                     alt="user"
                     width={50}
                     height={50}
