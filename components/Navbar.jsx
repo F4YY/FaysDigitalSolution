@@ -23,6 +23,7 @@ import {
   UserPicture,
 } from "./styled_navbar";
 import LogoFDS from '../public/LogoFDS&desc(new)rounded-white.png';
+import Avatar from '../public/avatar.jpg';
 
 const NavBar = ({currentPage, setCurrentPage}) => {
   const NavBarRef = useRef(null);
@@ -149,7 +150,7 @@ const NavBar = ({currentPage, setCurrentPage}) => {
               </LogoutButton>
               <HStack>
                 <UserName>
-                  Welcome&nbsp;<b>{user.user_metadata.full_name}</b>
+                  <b>{user.user_metadata.full_name}</b>
                 </UserName>
                 {user.user_metadata.avatar_url ? (
                   <UserPicture
@@ -159,7 +160,7 @@ const NavBar = ({currentPage, setCurrentPage}) => {
                     height={50}
                   />) : (
                   <UserPicture
-                    src={`/public/avatar.jpg`}
+                    src={Avatar}
                     alt="user"
                     width={50}
                     height={50}
@@ -259,38 +260,38 @@ const NavBar = ({currentPage, setCurrentPage}) => {
                 </MobileMenuButton>
               </StyledLiMobile>
             </Link>
-            <Link href='/content/pages/menu'>
+            <Link href='/about'>
               <StyledLiMobile>
-                <MobileMenuButton onClick={() => {handleClick("AllMenu")();setToggleMenu(false)}} $current={currentPage === 'AllMenu'}>
-                  Menu
+                <MobileMenuButton onClick={() => {handleClick("AllMenu")();setToggleMenu(false)}} $current={currentPage === 'About'}>
+                  About
                 </MobileMenuButton>
               </StyledLiMobile>
             </Link>
-            <Link href='/'>
+            <Link href='/services'>
               <StyledLiMobile>
-                <MobileMenuButton onClick={() => {handleClick("Menu")();setToggleMenu(false)}} $current={currentPage === 'Menu'}>
-                  Order Online
+                <MobileMenuButton onClick={() => {handleClick("Menu")();setToggleMenu(false)}} $current={currentPage === 'Services'}>
+                  Services
                 </MobileMenuButton>
               </StyledLiMobile>
             </Link>
-            <Link href='/content/pages/testimonials'>
+            <Link href='/portfolio'>
               <StyledLiMobile>
-                <MobileMenuButton onClick={() => {handleClick("Testimonials")();setToggleMenu(false)}} $current={currentPage === 'Testimonials'}>
-                  Testimonials
+                <MobileMenuButton onClick={() => {handleClick("Testimonials")();setToggleMenu(false)}} $current={currentPage === 'Portfolio'}>
+                  Portfolio
                 </MobileMenuButton>
               </StyledLiMobile>
             </Link>
-            <Link href='/content/pages/about'>
+            <Link href='/blog'>
               <StyledLiMobile>
-                <MobileMenuButton onClick={() => {handleClick("About")();setToggleMenu(false)}} $current={currentPage === 'About'}>
-                  About Us
+                <MobileMenuButton onClick={() => {handleClick("About")();setToggleMenu(false)}} $current={currentPage === 'Blog'}>
+                  Blog
                 </MobileMenuButton>
               </StyledLiMobile>
             </Link>
-            <Link href='/content/pages/reserve-table'>
+            <Link href='/contact'>
               <StyledLiMobile>
-                <MobileMenuButton href="#Reservation-section" onClick={() => {handleClick("Reservation")();setToggleMenu(false)}} $current={currentPage === 'Reservation'}>
-                  Reserve a table
+                <MobileMenuButton href="#Reservation-section" onClick={() => {handleClick("Reservation")();setToggleMenu(false)}} $current={currentPage === 'Contact'}>
+                  Contact
                 </MobileMenuButton>
               </StyledLiMobile>
             </Link>
@@ -298,7 +299,7 @@ const NavBar = ({currentPage, setCurrentPage}) => {
                 <MobileMenuButton
                   onClick={() => {login();setToggleMenu(false)}}
                 >
-                  Login / Sign Up
+                  Get Started!
                 </MobileMenuButton>
                 ) : (
                 <MobileMenuButton
