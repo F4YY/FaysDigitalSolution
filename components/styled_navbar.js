@@ -58,7 +58,7 @@ export const StyledUl = styled.ul`
   display: flex;
   flex-direction: row;
   list-style: none;
-  justify-content: right;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
   @media (max-width: 991px) {
