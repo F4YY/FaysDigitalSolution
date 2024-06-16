@@ -2,7 +2,9 @@
 import Link from "next/link";
 import React ,{ useContext, useEffect, useRef } from "react";
 // import { GiHamburgerMenu } from 'react-icons/gi';
-import { MdOutlineLogin, MdOutlineLogout, MdOutlineRestaurantMenu } from 'react-icons/md';
+import { FaBars } from "react-icons/fa6";
+import { MdOutlineLogin, MdOutlineLogout } from 'react-icons/md';
+import { IoCloseOutline } from "react-icons/io5";
 import { HStack, VStack } from "@chakra-ui/react";
 import AuthContext from "@/app/context/authContext";
 import {
@@ -175,20 +177,13 @@ const NavBar = ({currentPage, setCurrentPage}) => {
         </StyledUl>
       )}
       <AnimatedBurgerButton $toggleMenu={toggleMenu}>
-        <FontAwesomeIcon
-          icon="fa-duotone fa-bars"
-          color="darkblue"
+        <FaBars
           onClick={() => {
             setToggleMenu(!toggleMenu);
-          }}
-        />
-        {/* <GiHamburgerMenu
-          onClick={() => {
-            setToggleMenu(!toggleMenu);
-          }} /> */}
+          }} />
       </AnimatedBurgerButton>
       <AnimatedSpoonForkButton $toggleMenu={toggleMenu}>
-        <MdOutlineRestaurantMenu
+        <IoCloseOutline
           onClick={() => {
             setToggleMenu(!toggleMenu);
           }} />
