@@ -20,10 +20,10 @@
 import React, { useState } from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import { AuthContextProvider } from './context/authContext';
-import NavBar from '../components/Navbar';
-import { Container } from '../components/styled_container';
-import FootNav from '../components/footer';
+import { Container } from '../components/Styled_Components/styled_container';
 import StyledComponentsRegistry from '../components/registry';
+import NavBar from '@/components/Header/Navbar';
+import FootNav from '@/components/Footer/footer';
 
 export default function Layout({ children }) {
   const [currentPage, setCurrentPage] = useState('Home');

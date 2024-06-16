@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styled, {css} from "styled-components";
 import { HStack } from "@chakra-ui/react";
-import { fadeInLeft, fadeInRight } from "../components/styled_menu";
+import { fadeInLeft, fadeInRight } from '@/components/Styled_Components/styled_menu';
 
 export const StyledNavbar = styled(HStack)`
   position: fixed;

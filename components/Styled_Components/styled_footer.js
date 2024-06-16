@@ -112,7 +112,8 @@ export const Copyright = styled.div`
 export const FDlogo = styled(Image)`
   width: 15%;
   height: auto;
+  border-radius: 10px;
   @media screen and (max-width: 640px) {
-    width: 35%;
+    width: 40%;
   }
 `

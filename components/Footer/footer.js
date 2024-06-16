@@ -16,8 +16,8 @@ import {
   OpenHours,
   SocialMedia,
   VisitSosmed
-} from "./styled_footer";
-import LogoFDS from '../public/LogoFDS&desc(new)rounded-white.png';
+} from '@/components/Styled_Components/styled_footer';
+import LogoFDS from '@/public/LogoFDS&desc(new)rounded-white.png';
 
 const socials = [
   {
@@ -63,14 +63,14 @@ const FootNav = () => {
         </VisitSosmed>
         <Contact>
           <h1>Contact:</h1>
-          <p>Store: Caringin, Bogor, West Java - Indonesia -</p>
+          <p>Office: Caringin, Bogor, West Java - Indonesia -</p>
           <p>Phone Number: 0857-73436024</p>
-          <p>e-mail: info@faysdalgona.com</p>
+          <p>e-mail: info@fds.com</p>
         </Contact>
         <OpenHours>
           <h2>Open hours:</h2>
           <p>Monday-Sunday: 10:00 - 20:00</p>
-          <p>Eid Fitri: Close</p>
+          <p>Eid Fitri & Eid Adha: Close</p>
         </OpenHours>
       </FootWrapper>
       <Copyright>

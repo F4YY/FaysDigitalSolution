@@ -4,7 +4,7 @@ import React ,{ useContext, useEffect, useRef } from "react";
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineLogin, MdOutlineLogout, MdOutlineRestaurantMenu } from 'react-icons/md';
 import { HStack, VStack } from "@chakra-ui/react";
-import AuthContext from "../app/context/authContext";
+import AuthContext from "@/app/context/authContext";
 import {
   AnimatedBurgerButton,
   AnimatedSpoonForkButton,
@@ -21,9 +21,9 @@ import {
   StyledUlmobile,
   UserName,
   UserPicture,
-} from "./styled_navbar";
-import LogoFDS from '../public/LogoFDS&desc(new)rounded-white.png';
-import Avatar from '../public/avatar.jpg';
+} from '@/components/Styled_Components/styled_navbar';
+import LogoFDS from '@/public/LogoFDS&desc(new)rounded-white.png';
+import Avatar from '@/public/avatar.jpg';
 
 const NavBar = ({currentPage, setCurrentPage}) => {
   const NavBarRef = useRef(null);
