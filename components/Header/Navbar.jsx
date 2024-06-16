@@ -4,7 +4,7 @@ import React ,{ useContext, useEffect, useRef } from "react";
 // import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaBars } from "react-icons/fa6";
 import { MdOutlineLogin, MdOutlineLogout } from 'react-icons/md';
-import { IoCloseOutline } from "react-icons/io5";
+import { CgClose } from "react-icons/cg";
 import { HStack, VStack } from "@chakra-ui/react";
 import AuthContext from "@/app/context/authContext";
 import {
@@ -183,7 +183,7 @@ const NavBar = ({currentPage, setCurrentPage}) => {
           }} />
       </AnimatedBurgerButton>
       <AnimatedSpoonForkButton $toggleMenu={toggleMenu}>
-        <IoCloseOutline
+        <CgClose
           onClick={() => {
             setToggleMenu(!toggleMenu);
           }} />
