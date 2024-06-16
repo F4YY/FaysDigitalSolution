@@ -176,7 +176,8 @@ const NavBar = ({currentPage, setCurrentPage}) => {
       )}
       <AnimatedBurgerButton $toggleMenu={toggleMenu}>
         <FontAwesomeIcon
-          icon="fa-solid fa-bars"
+          icon="fa-duotone fa-bars"
+          color="darkblue"
           onClick={() => {
             setToggleMenu(!toggleMenu);
           }}
