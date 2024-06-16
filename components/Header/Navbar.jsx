@@ -1,7 +1,7 @@
 // 'use client'
 import Link from "next/link";
 import React ,{ useContext, useEffect, useRef } from "react";
-import { GiHamburgerMenu } from 'react-icons/gi';
+// import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineLogin, MdOutlineLogout, MdOutlineRestaurantMenu } from 'react-icons/md';
 import { HStack, VStack } from "@chakra-ui/react";
 import AuthContext from "@/app/context/authContext";
@@ -24,6 +24,7 @@ import {
 } from '@/components/Styled_Components/styled_navbar';
 import LogoFDS from '@/public/LogoFDS&desc(new)rounded-white.png';
 import Avatar from '@/public/avatar.jpg';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const NavBar = ({currentPage, setCurrentPage}) => {
   const NavBarRef = useRef(null);
@@ -174,10 +175,16 @@ const NavBar = ({currentPage, setCurrentPage}) => {
         </StyledUl>
       )}
       <AnimatedBurgerButton $toggleMenu={toggleMenu}>
-        <GiHamburgerMenu
+        <FontAwesomeIcon
+          icon="fa-solid fa-bars"
           onClick={() => {
             setToggleMenu(!toggleMenu);
-          }} />
+          }}
+        />
+        {/* <GiHamburgerMenu
+          onClick={() => {
+            setToggleMenu(!toggleMenu);
+          }} /> */}
       </AnimatedBurgerButton>
       <AnimatedSpoonForkButton $toggleMenu={toggleMenu}>
         <MdOutlineRestaurantMenu
