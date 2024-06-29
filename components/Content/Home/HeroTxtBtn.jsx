@@ -2,17 +2,20 @@ import * as React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
-function HeroTxtBtn() {
+function HeroTxtBtn({ currentPage, setCurrentPage, title, span, btnText, btnLink, curPage }) {
   return (
     <main>
       <section>
         <HeroContainer>
           <HeroText>
-            <p>Custom Website solutions to help your business <span>succeed.</span></p>
+            <p>{title} <span>{span}</span></p>
           </HeroText>
-          <StartButton>
-            <Link href="/about">
-              Get Started!
+          <StartButton
+            onClick={setCurrentPage={curPage}}
+            $current={currentPage === "About"}
+          >
+            <Link href={btnLink}>
+              {btnText}
             </Link>
           </StartButton>
         </HeroContainer>

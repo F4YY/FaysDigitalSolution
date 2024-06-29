@@ -1,7 +1,6 @@
 // 'use client'
 import Link from "next/link";
 import React ,{ useContext, useEffect, useRef } from "react";
-// import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaBars } from "react-icons/fa6";
 import { MdOutlineLogin, MdOutlineLogout } from 'react-icons/md';
 import { CgClose } from "react-icons/cg";
@@ -72,7 +71,7 @@ const NavBar = ({currentPage, setCurrentPage}) => {
     >
       <StyledImage
         src={LogoFDS}
-        alt="FD_logo"
+        alt="FDS_logo"
         width={350}
         height={45}
       />
