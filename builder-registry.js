@@ -2,6 +2,7 @@
 import { builder, Builder } from "@builder.io/react";
 import Counter from "./components/Counter/Counter";
 import HeroTxtBtn from "./components/Content/Home/HeroTxtBtn";
+import LearnMoreLink from "./components/Content/Home/LearnMoreLink";
 import NavBar from "./components/Header/Navbar";
 import Testimonials from "./components/Content/Home/Testimonials";
 
@@ -39,7 +40,7 @@ Builder.registerComponent(HeroTxtBtn, {
       type: "string",
       defaultValue: "About",
     },
-  ]
+  ],
 });
 
 Builder.registerComponent(NavBar, {
@@ -102,8 +103,29 @@ Builder.registerComponent(Testimonials, {
             "https://cdn.builder.io/api/v1/image/assets%2F1bea62adcf07414aa16974ab6f37361e%2F383cb10282084ccab3634f6b1c952afe",
           review:
             "Fay's Digital Solution provided an exceptional experience from start to finish. Their innovative process eliminated the need for time-consuming consultations, which was perfect for our fast-paced startup. The team's creativity and attention to detail resulted in a stunning website re-design that has received numerous compliments. We're thrilled with the outcome and look forward to working with them again.",
-        }
+        },
       ],
-    }
+    },
+  ],
+});
+
+Builder.registerComponent(LearnMoreLink, {
+  name: "LearnMoreLink",
+  inputs: [
+    {
+      name: "curPage",
+      type: "string",
+      defaultValue: "Services",
+    },
+    {
+      name: "text",
+      type: "string",
+      defaultValue: "Learn More",
+    },
+    {
+      name: "textLink",
+      type: "string",
+      defaultValue: "/services",
+    },
   ],
 });

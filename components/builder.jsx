@@ -7,6 +7,7 @@ import "../builder-registry";
 import HeroTxtBtn from "./Content/Home/HeroTxtBtn";
 import { useContext } from "react";
 import AuthContext from "@/app/context/authContext";
+import LearnMoreLink from "./Content/Home/LearnMoreLink";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 
@@ -27,7 +28,17 @@ export function RenderBuilderContent({ content, model }) {
               setCurrentPage={setCurrentPage}
             />
           ),
-        }
+        },
+        {
+          name: 'LearnMoreLink',
+          component: (props) => (
+            <LearnMoreLink
+              {...props}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
+          ),
+        },
       ]}
     />;
   }
