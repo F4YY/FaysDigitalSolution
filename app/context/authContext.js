@@ -1,3 +1,4 @@
+'use client';
 import { createContext, useEffect, useRef, useState } from "react";
 import netlifyIdentity from "netlify-identity-widget";
 import { db } from "../firebase.config";
@@ -20,6 +21,8 @@ const AuthContext = createContext({
   menuName: '',
   handleRateMenu: () => {},
   handleSubmit: () => {},
+  currentPage: 'Home',
+  setCurrentPage: () => {}
 });
 
 export const AuthContextProvider = ({ children }) => {
@@ -38,6 +41,7 @@ export const AuthContextProvider = ({ children }) => {
   const [menuName, setMenuName] = useState('');
   const [showLeftChevron, setShowLeftChevron] = useState(false);
   const [showRightChevron, setShowRightChevron] = useState(true);
+  const [currentPage, setCurrentPage] = useState('Home');
 
   useEffect(() => {
     netlifyIdentity.on('login', user => {
@@ -183,7 +187,9 @@ export const AuthContextProvider = ({ children }) => {
     showLeftChevron,
     showRightChevron,
     setShowLeftChevron,
-    setShowRightChevron
+    setShowRightChevron,
+    currentPage,
+    setCurrentPage
   }
 
   return (

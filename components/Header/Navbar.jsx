@@ -25,9 +25,8 @@ import {
 } from '@/components/Styled_Components/styled_navbar';
 import LogoFDS from '@/public/LogoFDS&desc(new)rounded-white.png';
 import Avatar from '@/public/avatar.jpg';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const NavBar = ({currentPage, setCurrentPage}) => {
+const NavBar = () => {
   const NavBarRef = useRef(null);
   const {
     user,
@@ -36,7 +35,9 @@ const NavBar = ({currentPage, setCurrentPage}) => {
     authReady,
     scrollToTopHomePage,
     scrollToTopPage,
-    scrollToTopSubPage
+    scrollToTopSubPage,
+    currentPage,
+    setCurrentPage
   } = useContext(AuthContext);
   console.log(user);
 

@@ -26,8 +26,6 @@ import NavBar from '@/components/Header/Navbar';
 import FootNav from '@/components/Footer/footer';
 
 export default function Layout({ children }) {
-  const [currentPage, setCurrentPage] = useState('Home');
-
   return (
     <html lang="en">
       <head>
@@ -39,7 +37,7 @@ export default function Layout({ children }) {
           <AuthContextProvider>
             <StyledComponentsRegistry>
               <Container>
-                <NavBar currentPage={currentPage} setCurrentPage={setCurrentPage} />
+                <NavBar/>
                 {children}
                 <FootNav />
               </Container>
