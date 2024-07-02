@@ -7,14 +7,18 @@ function LearnMoreLink({text, curPage, currentPage, setCurrentPage}) {
     setCurrentPage(curPage);
   }
   return (
-    <StyledLink
-      onClick={handleClick}
-      $current={currentPage === curPage}
-    >
-      <Link href="/services">
-        <p>{text} &gt;</p>
-      </Link>
-    </StyledLink>
+    <main>
+      <section>
+        <StyledLink
+          onClick={handleClick}
+          $current={currentPage === curPage}
+        >
+          <Link href="/services">
+            <p>{text} &gt;</p>
+          </Link>
+        </StyledLink>
+      </section>
+    </main>
   );
 }
 

@@ -5,6 +5,7 @@ import HeroTxtBtn from "./components/Content/Home/HeroTxtBtn";
 import LearnMoreLink from "./components/Content/Home/LearnMoreLink";
 import NavBar from "./components/Header/Navbar";
 import Testimonials from "./components/Content/Home/Testimonials";
+import LinkToPage from "./components/Content/About/LinkToPage";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 
@@ -42,6 +43,31 @@ Builder.registerComponent(HeroTxtBtn, {
     },
   ],
 });
+
+Builder.registerComponent(LearnMoreLink, {
+  name: "LearnMoreLink",
+  inputs: [
+    {
+      name: "curPage",
+      type: "string",
+      defaultValue: "Services",
+    },
+    {
+      name: "text",
+      type: "string",
+      defaultValue: "Learn more",
+    },
+    {
+      name: "textLink",
+      type: "string",
+      defaultValue: "/services",
+    },
+  ],
+});
+
+Builder.registerComponent(LinkToPage, {
+  name: "LinkToPage"
+})
 
 Builder.registerComponent(NavBar, {
   name: "Navbar",
@@ -105,27 +131,6 @@ Builder.registerComponent(Testimonials, {
             "Fay's Digital Solution provided an exceptional experience from start to finish. Their innovative process eliminated the need for time-consuming consultations, which was perfect for our fast-paced startup. The team's creativity and attention to detail resulted in a stunning website re-design that has received numerous compliments. We're thrilled with the outcome and look forward to working with them again.",
         },
       ],
-    },
-  ],
-});
-
-Builder.registerComponent(LearnMoreLink, {
-  name: "LearnMoreLink",
-  inputs: [
-    {
-      name: "curPage",
-      type: "string",
-      defaultValue: "Services",
-    },
-    {
-      name: "text",
-      type: "string",
-      defaultValue: "Learn More",
-    },
-    {
-      name: "textLink",
-      type: "string",
-      defaultValue: "/services",
     },
   ],
 });

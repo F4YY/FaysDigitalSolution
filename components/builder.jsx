@@ -1,5 +1,4 @@
 "use client";
-
 import { BuilderComponent, useIsPreviewing } from "@builder.io/react";
 import { builder } from "@builder.io/sdk";
 import DefaultErrorPage from "next/error";
@@ -37,8 +36,8 @@ export function RenderBuilderContent({ content, model }) {
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
             />
-          ),
-        },
+          )
+        }
       ]}
     />;
   }

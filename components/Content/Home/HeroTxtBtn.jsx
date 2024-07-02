@@ -78,6 +78,8 @@ const StartButton = styled.button`
   text-align: center;
   cursor: pointer;
   font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 0.16px;
   padding: 15px 25px;
   @media (max-width: 991px) {
     font-size: 20px;
