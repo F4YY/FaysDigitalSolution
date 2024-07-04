@@ -7,18 +7,17 @@ function LearnMoreLink({text, curPage, currentPage, setCurrentPage}) {
     setCurrentPage(curPage);
   }
   return (
-    <main>
-      <section>
-        <StyledLink
-          onClick={handleClick}
-          $current={currentPage === curPage}
-        >
-          <Link href="/services">
-            <p>{text} &gt;</p>
-          </Link>
-        </StyledLink>
-      </section>
-    </main>
+    <StyledLink
+      onClick={handleClick}
+      $current={currentPage === curPage}
+    >
+      <Link
+        href="/services"
+        style={{textAlign: "center"}}
+      >
+        <p>{text} &gt;</p>
+      </Link>
+    </StyledLink>
   );
 }
 
@@ -27,7 +26,8 @@ const StyledLink = styled.button`
   line-height: 28px;
   font-family: "Poppins", sans-serif;
   letter-spacing: 1px;
-  align-self: flex-start;
+  align-self: center;
+  text-align: center;
   padding-right: 30px;
   color: #333;
   font-weight: 500;
