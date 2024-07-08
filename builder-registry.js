@@ -6,6 +6,7 @@ import LearnMoreLink from "./components/Content/Home/LearnMoreLink";
 import NavBar from "./components/Header/Navbar";
 import Testimonials from "./components/Content/Home/Testimonials";
 import LinkToPage from "./components/Content/About/LinkToPage";
+import ArticleLink from "./components/Content/Blog/ArticleLink";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 
@@ -61,6 +62,27 @@ Builder.registerComponent(LearnMoreLink, {
       name: "textLink",
       type: "string",
       defaultValue: "/services",
+    },
+  ],
+});
+
+Builder.registerComponent(ArticleLink, {
+  name: "ArticleLink",
+  inputs: [
+    {
+      name: "curPage",
+      type: "string",
+      defaultValue: "Blog",
+    },
+    {
+      name: "text",
+      type: "string",
+      defaultValue: "Read this article",
+    },
+    {
+      name: "textLink",
+      type: "string",
+      defaultValue: "/blog/article-01",
     },
   ],
 });

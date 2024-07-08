@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
-function LearnMoreLink({text, curPage, currentPage, setCurrentPage}) {
+function LearnMoreLink({text, textLink, curPage, currentPage, setCurrentPage}) {
   const handleClick = () => {
     setCurrentPage(curPage);
   }
@@ -12,7 +12,7 @@ function LearnMoreLink({text, curPage, currentPage, setCurrentPage}) {
       $current={currentPage === curPage}
     >
       <Link
-        href="/services"
+        href={textLink}
         style={{textAlign: "center"}}
       >
         <p>{text} &gt;</p>
