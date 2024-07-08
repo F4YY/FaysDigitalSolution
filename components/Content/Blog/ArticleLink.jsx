@@ -12,7 +12,7 @@ const ArticleLink = ({ text, textLink, curPage, currentPage, setCurrentPage }) =
       $current={currentPage === curPage}
     >
       <Link
-        href='/blog/article-01'
+        href={textLink}
       >
         <p>{text}</p>
       </Link>
