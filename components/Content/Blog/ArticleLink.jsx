@@ -45,13 +45,12 @@ const StyledLink = styled.button`
 
   @media (max-width: 991px) {
     font-size: 15px;
-    margin: 20px auto 0;
+    margin: 0 auto;
     padding: 10px 15px;
   }
 
   @media (max-width: 640px) {
     font-size: 15px;
-    margin-top: 21px;
     padding: 10px 15px;
   }
 `;
