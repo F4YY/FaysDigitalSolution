@@ -84,7 +84,7 @@
 
 'use client'
 import React, { useContext } from "react";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import { HStack } from "@chakra-ui/react";
 import { faEnvelope, faLocationPin } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -93,6 +93,7 @@ import AuthContext from "@/app/context/authContext";
 import Link from "next/link";
 
 const Footer = () => {
+  const { currentPage, setCurrentPage } = useContext(AuthContext);
   const companyLinks = [
     { text: "About us", url: "/about", curPage: 'About' },
     { text: "Portfolio", url: "/portfolio", curPage: 'Portfolio' },
@@ -118,9 +119,9 @@ const Footer = () => {
           </CompanyDescription>
         </CompanyInfo>
         <FooterColumns>
-          <FooterColumn title="Our Company" links={companyLinks}/>
-          <FooterColumn title="Services" links={serviceLinks}/>
-          <FooterColumn title="Support" links={supportLinks}/>
+          <FooterColumn title="Our Company" links={companyLinks} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+          <FooterColumn title="Services" links={serviceLinks} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+          <FooterColumn title="Support" links={supportLinks} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
           <ContactInfo>
             <ContactTitle>Get in touch</ContactTitle>
             <ContactDetail>
@@ -249,8 +250,7 @@ const FooterColumns = styled.div`
   }
 `;
 
-const FooterColumn = ({ title, links }) => {
-  const [currentPage, setCurrentPage] = React.useState("Home");
+const FooterColumn = ({ title, links, currentPage, setCurrentPage }) => {
   return (
   <ColumnWrapper>
     <ColumnTitle>{title}</ColumnTitle>
@@ -307,6 +307,9 @@ const ColumnLink = styled.a`
   &:active {
     color: #2e5ebd;
   }
+  ${props => props.$current && css`
+    color: #2e5ebd;
+  `}
   @media (max-width: 991px) {
     font-size: 14px;
   }
