@@ -83,23 +83,28 @@
 // export default FootNav;
 
 'use client'
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { HStack } from "@chakra-ui/react";
+import { faEnvelope, faLocationPin } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AuthContext from "@/app/context/authContext";
 
 const Footer = () => {
   const companyLinks = [
-    { text: "About us", url: "#" },
-    { text: "Portfolio", url: "#" },
-    { text: "Blog", url: "#" },
+    { text: "About us", url: "/about", curPage: 'About' },
+    { text: "Portfolio", url: "/portfolio", curPage: 'Portfolio' },
+    { text: "Blog", url: "/blog", curPage: 'Blog' },
   ];
 
   const serviceLinks = [
-    { text: "Web App Development", url: "#" },
-    { text: "Web App Re-design", url: "#" },
+    { text: "Web App Development", url: "/services", curPage: 'Services' },
+    { text: "Web App Re-design", url: "/services", curPage: 'Services' },
   ];
 
   const supportLinks = [
-    { text: "Contact", url: "#" },
+    { text: "Contact", url: "/contact", curPage: 'Contact' },
   ];
 
   return (
@@ -117,12 +122,29 @@ const Footer = () => {
           <FooterColumn title="Support" links={supportLinks} />
           <ContactInfo>
             <ContactTitle>Get in touch</ContactTitle>
-            <ContactDetail>info@faysdigitalsolution.com</ContactDetail>
-            <ContactDetail>+62 8577 3436 024</ContactDetail>
-            <ContactDetail>Bogor, Indonesia</ContactDetail>
+            <ContactDetail>
+              <HStack onClick={() => { window.open("mailto:info@faysdigitalsolution.com", "_blank"); }}>
+                <FontAwesomeIcon icon={faEnvelope} size="lg" />
+                <p>info@faysdigitalsolution.com</p>
+              </HStack>
+            </ContactDetail>
+            <ContactDetail>
+              <HStack onClick={() => { window.open("https://wa.me/6285773436024", "_blank"); }}>
+                <FontAwesomeIcon icon={faWhatsapp} size="lg" />
+                <p>+62 8577 3436 024</p>
+              </HStack>
+            </ContactDetail>
+            <ContactDetail>
+              <HStack>
+                <FontAwesomeIcon icon={faLocationPin} size="lg" />
+                <p>Bogor, Indonesia</p>
+              </HStack>
+            </ContactDetail>
             <SocialMedia>
-              <SocialIcon src="https://cdn.builder.io/api/v1/image/assets%2F1bea62adcf07414aa16974ab6f37361e%2F27a3a244f5014f15933d1351493fedcb" alt="Instagram icon" />
-              <SocialHandle>fays.digitalsolution</SocialHandle>
+              <HStack onClick={() => { window.open("https://www.instagram.com/fays.digitalsolution/", "_blank"); }}>
+                <FontAwesomeIcon icon={faInstagram} size="lg" />
+                <SocialHandle>fays.digitalsolution</SocialHandle>
+              </HStack>
             </SocialMedia>
           </ContactInfo>
         </FooterColumns>
@@ -146,14 +168,12 @@ const FooterWrapper = styled.footer`
   @media (max-width: 991px) {
     padding: 30px;
   }
-  @media (max-width: 640px) {
-    padding: 25px;
-  }
 `;
 
 const FooterContent = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 40px;
   @media (max-width: 991px) {
     flex-direction: column;
   }
@@ -165,6 +185,11 @@ const CompanyInfo = styled.div`
   width: 30%;
   @media (max-width: 991px) {
     width: 100%;
+    margin-left: 35px;
+  }
+  @media (max-width: 640px) {
+    align-items: center;
+    margin-left: 0;
   }
 `;
 
@@ -172,41 +197,45 @@ const CompanyLogo = styled.img`
   aspect-ratio: 8.13;
   object-fit: contain;
   object-position: center;
-  width: 90%;
+  width: 70%;
   overflow: hidden;
   margin: 20px 0;
   @media (max-width: 991px) {
-    width: 35%;
+    width: 25%;
   }
   @media (max-width: 640px) {
-    width: 60%;
-    margin: 0 auto 10px;
+    width: 50%;
+    margin: 0;
   }
 `;
 
 const CompanyDescription = styled.p`
-  line-height: 28px;
+  font-size: 15px;
+  line-height: 26px;
   font-family: "Raleway", sans-serif;
   letter-spacing: 1px;
   padding-right: 30px;
   color: #333;
   @media (max-width: 991px) {
     font-size: 14px;
-    width: 100%;
+    width: 80%;
   }
   @media (max-width: 640px) {
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
+    width: 100%;
     line-height: 20px;
+    padding-right:0;
     align-self: center;
+    margin-top: 15px;
   }
 `;
 
 const FooterColumns = styled.div`
   display: flex;
-  justify-content: space-between;
-  gap: 40px;
+  justify-content: space-evenly;
   margin-top: 25px;
+  gap: 30px;
   @media (max-width: 991px) {
     flex-wrap: wrap;
     justify-content: space-around;
@@ -215,23 +244,33 @@ const FooterColumns = styled.div`
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
+    margin-top: 15px;
   }
 `;
 
-const FooterColumn = ({ title, links }) => (
+const FooterColumn = ({ title, links }) => {
+  const {currentPage, setCurrentPage} = useContext(AuthContext);
+  return (
   <ColumnWrapper>
     <ColumnTitle>{title}</ColumnTitle>
     {links.map((link, index) => (
-      <ColumnLink key={index} href={link.url}>
+      <ColumnLink
+        key={index}
+        href={link.url}
+        onClick={() => setCurrentPage(link.curPage)}
+        $current={currentPage === link.curPage}
+      >
         {link.text}
       </ColumnLink>
     ))}
   </ColumnWrapper>
-);
+  )
+};
 
 const ColumnWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   @media (max-width: 991px) {
     width: 40%;
   }
@@ -242,10 +281,9 @@ const ColumnWrapper = styled.div`
 `;
 
 const ColumnTitle = styled.h3`
-  font-size: 22px;
+  font-size: 18px;
   color: #2e5ebd;
   font-weight: 600;
-  margin-bottom: 20px;
   @media (max-width: 991px) {
     font-size: 18px;
   }
@@ -258,45 +296,67 @@ const ColumnTitle = styled.h3`
 const ColumnLink = styled.a`
   letter-spacing: 1px;
   color: #333;
-  font: 16px/28px "Raleway", sans-serif;
+  font-size: 14px;
   text-decoration: none;
   margin-top: 10px;
+  &:hover {
+    color: #2e5ebd;
+  }
+  &:active {
+    color: #2e5ebd;
+  }
+  ${props => props.$current && css`
+    color: #2e5ebd;
+  `};
   @media (max-width: 991px) {
     font-size: 14px;
   }
   @media (max-width: 640px) {
-    width: 85%;
+    width: 100%;
     text-align: center;
     font-size: 13px;
-    align-self: center;
     line-height: 24px;
+    margin: 0;
   }
 `;
 
 const ContactInfo = styled.div`
   display: flex;
   flex-direction: column;
+  @media (max-width: 991px) {
+    width: 40%;
+  }
+  @media (max-width: 640px) {
+    width: 100%;
+    align-items: center;
+  }
 `;
 
 const ContactTitle = styled.h3`
-  font-size: 22px;
+  font-size: 18px;
   color: #2e5ebd;
   font-weight: 600;
-  margin: 0 0 20px 12px;
   @media (max-width: 991px) {
     font-size: 18px;
   }
   @media (max-width: 640px) {
     font-size: 15px;
-    margin: 10px auto;
+    margin: 10px auto 0;
   }
 `;
 
 const ContactDetail = styled.p`
   letter-spacing: 1px;
   color: #333;
-  margin: 10px 0 0 12px;
-  font: 16px/28px "Raleway", sans-serif;
+  font-size: 14px;
+  margin-top: 10px;
+  &:hover:not(:nth-child(4)) {
+    cursor: pointer;
+    color: #2e5ebd;
+  }
+  &:active:not(:nth-child(4)) {
+    color: #2e5ebd;
+  }
   @media (max-width: 991px) {
     font-size: 14px;
   }
@@ -307,25 +367,11 @@ const ContactDetail = styled.p`
 `;
 
 const SocialMedia = styled.div`
-  display: flex;
-  flex-direction: row;
+  width: auto;
   margin-top: 10px;
-  @media (max-width: 640px) {
-    width: 100%;
-    justify-content: center;
-  }
-`;
-
-const SocialIcon = styled.img`
-  aspect-ratio: 1;
-  object-fit: contain;
-  object-position: center;
-  width: 17%;
-  min-height: 20px;
-  min-width: 20px;
-  overflow: hidden;
-  @media (max-width: 640px) {
-    width: 12%;
+  cursor: pointer;
+  &:hover {
+    color: #2e5ebd;
   }
 `;
 
@@ -333,7 +379,10 @@ const SocialHandle = styled.p`
   letter-spacing: 1px;
   color: #333;
   margin: auto 0;
-  font: 16px/28px "Raleway", sans-serif;
+  font-size: 14px;
+  &:hover {
+    color: #2e5ebd;
+  }
   @media (max-width: 991px) {
     font-size: 14px;
   }
@@ -351,10 +400,10 @@ const Copyright = styled.p`
   color: #333;
   margin-top: 20px;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 15px;
   @media (max-width: 640px) {
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
   }
 `;
 
