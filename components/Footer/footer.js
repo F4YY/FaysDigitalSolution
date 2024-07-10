@@ -203,10 +203,10 @@ const CompanyLogo = styled.img`
   overflow: hidden;
   margin: 20px 0;
   @media (max-width: 991px) {
-    width: 25%;
+    width: 27%;
   }
   @media (max-width: 640px) {
-    width: 50%;
+    width: 56%;
     margin: 0;
   }
 `;
