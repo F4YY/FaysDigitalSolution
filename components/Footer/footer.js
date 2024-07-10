@@ -305,9 +305,6 @@ const ColumnLink = styled.a`
   &:active {
     color: #2e5ebd;
   }
-  ${props => props.$current && css`
-    color: #2e5ebd;
-  `};
   @media (max-width: 991px) {
     font-size: 14px;
   }
