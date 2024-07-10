@@ -90,6 +90,7 @@ import { faEnvelope, faLocationPin } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AuthContext from "@/app/context/authContext";
+import Link from "next/link";
 
 const Footer = () => {
   const companyLinks = [
@@ -117,9 +118,9 @@ const Footer = () => {
           </CompanyDescription>
         </CompanyInfo>
         <FooterColumns>
-          <FooterColumn title="Our Company" links={companyLinks} />
-          <FooterColumn title="Services" links={serviceLinks} />
-          <FooterColumn title="Support" links={supportLinks} />
+          <FooterColumn title="Our Company" links={companyLinks}/>
+          <FooterColumn title="Services" links={serviceLinks}/>
+          <FooterColumn title="Support" links={supportLinks}/>
           <ContactInfo>
             <ContactTitle>Get in touch</ContactTitle>
             <ContactDetail>
@@ -249,18 +250,19 @@ const FooterColumns = styled.div`
 `;
 
 const FooterColumn = ({ title, links }) => {
-  const {currentPage, setCurrentPage} = useContext(AuthContext);
+  const [currentPage, setCurrentPage] = React.useState("Home");
   return (
   <ColumnWrapper>
     <ColumnTitle>{title}</ColumnTitle>
     {links.map((link, index) => (
       <ColumnLink
         key={index}
-        href={link.url}
         onClick={() => setCurrentPage(link.curPage)}
         $current={currentPage === link.curPage}
       >
-        {link.text}
+        <Link href={link.url}>
+          {link.text}
+        </Link>
       </ColumnLink>
     ))}
   </ColumnWrapper>
