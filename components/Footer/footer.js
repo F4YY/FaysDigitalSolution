@@ -252,22 +252,35 @@ const FooterColumns = styled.div`
 
 const FooterColumn = ({ title, links, currentPage, setCurrentPage }) => {
   return (
+  // <ColumnWrapper>
+  //   <ColumnTitle>{title}</ColumnTitle>
+  //   {links.map((link, index) => (
+  //     <ColumnLink
+  //       key={index}
+  //       onClick={() => setCurrentPage(link.curPage)}
+  //       $current={currentPage === link.curPage}
+  //     >
+  //       <Link href={link.url}>
+  //         {link.text}
+  //       </Link>
+  //     </ColumnLink>
+  //   ))}
+  // </ColumnWrapper>
+
   <ColumnWrapper>
     <ColumnTitle>{title}</ColumnTitle>
     {links.map((link, index) => (
-      <ColumnLink
-        key={index}
-        onClick={() => setCurrentPage(link.curPage)}
-        $current={currentPage === link.curPage}
-      >
-        <Link href={link.url}>
+      <Link href={link.url} key={index} passHref>
+        <ColumnLink
+          onClick={() => setCurrentPage(link.curPage)}
+          $current={currentPage === link.curPage}
+        >
           {link.text}
-        </Link>
-      </ColumnLink>
+        </ColumnLink>
+      </Link>
     ))}
   </ColumnWrapper>
-  )
-};
+)};
 
 const ColumnWrapper = styled.div`
   display: flex;

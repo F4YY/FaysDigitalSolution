@@ -48,7 +48,7 @@ export function RenderBuilderContent({ content, model }) {
               setCurrentPage={setCurrentPage}
             />
           )
-        },
+        }
       ]}
     />;
   }

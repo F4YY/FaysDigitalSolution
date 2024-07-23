@@ -7,21 +7,19 @@ function LearnMoreLink({text, textLink, curPage, currentPage, setCurrentPage}) {
     setCurrentPage(curPage);
   }
   return (
-    <StyledLink
+    <Link
+      href={textLink} passHref
       onClick={handleClick}
       $current={currentPage === curPage}
     >
-      <Link
-        href={textLink}
-        style={{textAlign: "center"}}
-      >
-        <p>{text} &gt;</p>
-      </Link>
-    </StyledLink>
+      <StyledLink >
+        {text} &gt;
+      </StyledLink>
+    </Link>
   );
 }
 
-const StyledLink = styled.button`
+const StyledLink = styled.a`
   position: relative;
   line-height: 28px;
   font-family: "Poppins", sans-serif;

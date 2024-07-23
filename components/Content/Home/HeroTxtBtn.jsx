@@ -13,14 +13,15 @@ function HeroTxtBtn({title, span, btnText, btnLink, curPage, currentPage, setCur
           <HeroText>
             <p>{title} <span>{span}</span></p>
           </HeroText>
-          <StartButton
+          <Link
+            href={btnLink}
             onClick={handleClick}
             $current={currentPage === curPage}
           >
-            <Link href={btnLink}>
+            <StartButton>
               {btnText}
-            </Link>
-          </StartButton>
+            </StartButton>
+          </Link>
         </HeroContainer>
       </section>
     </main>
