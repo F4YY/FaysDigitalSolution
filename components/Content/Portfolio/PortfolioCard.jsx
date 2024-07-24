@@ -84,7 +84,6 @@ const TourismTitle = styled.h2`
   background-color: rgba(0, 0, 0, 0.4);
   margin: auto;
   padding: 15px;
-  z-index: 1;
 `;
 
 const FilterTags = styled.div`
