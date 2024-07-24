@@ -19,7 +19,7 @@ function LearnMoreLink({text, textLink, curPage, currentPage, setCurrentPage}) {
   );
 }
 
-const StyledLink = styled.a`
+const StyledLink = styled.p`
   position: relative;
   line-height: 28px;
   font-family: "Poppins", sans-serif;

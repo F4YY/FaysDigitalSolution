@@ -308,7 +308,7 @@ const ColumnTitle = styled.h3`
   }
 `;
 
-const ColumnLink = styled.a`
+const ColumnLink = styled.p`
   letter-spacing: 1px;
   color: #333;
   font-size: 14px;
@@ -360,7 +360,7 @@ const ContactTitle = styled.h3`
   }
 `;
 
-const ContactDetail = styled.p`
+const ContactDetail = styled.div`
   letter-spacing: 1px;
   color: #333;
   font-size: 14px;

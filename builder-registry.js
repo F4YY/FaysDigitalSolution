@@ -90,34 +90,35 @@ Builder.registerComponent(ArticleLink, {
 
 Builder.registerComponent(PortfolioCard, {
   name: "PortfolioCard",
-  // inputs: [
-  //   {
-  //     name: "srcImg",
-  //     type: "file",
-  //     defaultValue: "https://cdn.builder.io/api/v1/image/assets%2F1bea62adcf07414aa16974ab6f37361e%2Fdc0340ea8f434916bf087d258147389e"
-  //   },
-  //   {
-  //     name: "srcLink",
-  //     type: "string",
-  //     defaultValue: "/portfolio/spacetourism",
-  //   },
-  //   {
-  //     name: "title",
-  //     type: "string",
-  //     defaultValue: "Space Tourism",
-  //   },
-  //   {
-  //     name: "tags",
-  //     type: "string",
-  //     defaultValue: "Web app re-design, Aerospace, Technology",
-  //   },
-  //   {
-  //     name: "curPage",
-  //     type: "string",
-  //     defaultValue: "Portfolio",
-  //   }
-  // ],
-})
+  inputs: [
+    {
+      name: "curPage",
+      type: "string",
+      defaultValue: "Portfolio",
+    },
+    {
+      name: "textLink",
+      type: "string",
+      defaultValue: "/portfolio/spacetourism",
+    },
+    {
+      name: "title",
+      type: "string",
+      defaultValue: "Space tourism",
+    },
+    {
+      name: "image",
+      type: "file",
+      defaultValue: "https://cdn.builder.io/api/v1/image/assets%2F1bea62adcf07414aa16974ab6f37361e%2Fdc0340ea8f434916bf087d258147389e",
+    },
+    {
+      name: "tags",
+      type: "string",
+      defaultValue: ["Web app re-design", "Aerospace", "Technology"],
+    },
+  ],
+});
+
 
 Builder.registerComponent(LinkToPage, {
   name: "LinkToPage"

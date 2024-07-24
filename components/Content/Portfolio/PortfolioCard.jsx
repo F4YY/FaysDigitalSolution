@@ -1,19 +1,25 @@
 'use client';
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
-const PortfolioCard = () => {
-  const tags = ["HTML", "CSS", "JavaScript", "React"];
+const PortfolioCard = ({title, image, tags, textLink, curPage, currentPage, setCurrentPage}) => {
+  // const tags = ["Web app re-design", "Aerospace", "Technology"];
   const handleClick = () => {
     setCurrentPage(curPage);
   }
   return (
+    <Link
+      href={textLink}
+      onClick={handleClick}
+      $current={currentPage === curPage}
+      >
     <Card>
       <TourismImage
         loading="lazy"
         sizes="(max-width: 998px) 31vw, 28vw"
-        src={srcImg}
-        alt="Space Tourism"
+        src={image}
+        alt={title}
       />
       <TourismTitle>
         {title}
@@ -24,6 +30,7 @@ const PortfolioCard = () => {
         ))}
       </FilterTags>
     </Card>
+    </Link>
   );
 };
 
@@ -57,9 +64,13 @@ const TourismImage = styled.img`
   width: 100%;
   object-fit: cover;
   object-position: center;
+  border-radius: 20px;
+  :hover {
+    scale: 1.02;
+  }
 `;
 
-const TourismTitle = styled.div`
+const TourismTitle = styled.h2`
   position: relative;
   line-height: 12px;
   height: auto;
@@ -73,6 +84,7 @@ const TourismTitle = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
   margin: auto;
   padding: 15px;
+  z-index: 1;
 `;
 
 const FilterTags = styled.div`
