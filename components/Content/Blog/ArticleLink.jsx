@@ -7,19 +7,25 @@ const ArticleLink = ({ text, textLink, curPage, currentPage, setCurrentPage }) =
     setCurrentPage(curPage);
   }
   return (
-    <Link
-      href={textLink}
-      onClick={handleClick}
-      $current={currentPage === curPage}
-    >
-      <StyledLink >
+    // <StyledLink
+    //   onClick={handleClick}
+    //   $current={currentPage === curPage}
+    // >
+    //   <Link
+    //     href={textLink}
+    //   >
+    //     <p>{text}</p>
+    //   </Link>
+    // </StyledLink>
+    <Link href={textLink} passHref>
+      <StyledLink onClick={handleClick} $current={currentPage === curPage}>
         {text}
       </StyledLink>
     </Link>
   );
 };
 
-const StyledLink = styled.p`
+const StyledLink = styled.button`
   all: unset;
   display: flex;
   flex-direction: column;
