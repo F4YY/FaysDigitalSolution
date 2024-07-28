@@ -72,6 +72,7 @@ const StartButton = styled.button`
   all: unset;
   display: flex;
   flex-direction: column;
+  width: 450px;
   position: relative;
   background-color: rgba(74, 144, 226, 1);
   color: #fff;
@@ -85,6 +86,12 @@ const StartButton = styled.button`
   @media (max-width: 991px) {
     font-size: 20px;
     padding: 10px 15px;
+    width: 370px;
+  }
+  @media (max-width: 640px) {
+    font-size: 18px;
+    padding: 10px 15px;
+    width: 210px;
   }
 `;
 
